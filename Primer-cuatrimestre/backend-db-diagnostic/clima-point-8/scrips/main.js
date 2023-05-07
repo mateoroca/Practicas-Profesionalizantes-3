@@ -51,7 +51,7 @@ butonShowWeather.addEventListener("click", () => {
 
   // Crear los encabezados
   let encabezados = [
-    "Valores",
+    "Parametros",
     "Ene",
     "Feb",
     "Mar",
