@@ -1,0 +1,52 @@
+body {
+  background: #0F2027;
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+#btnShowWeather {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: #fff;
+
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+
+
+#btnShowWeather:hover {
+  background-color: #dcf0dc;
+  color: black;
+  box-shadow: 2px 5px 10px rgba(255, 255, 255, 0.37);
+}
+
+.contenedorTabla {
+  background-color: #bdced3;
+  box-shadow: 5px 10px 20px rgba(255, 255, 255, 0.37);
+  ;
+}
