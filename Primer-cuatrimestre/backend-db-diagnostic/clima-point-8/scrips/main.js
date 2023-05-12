@@ -42,14 +42,12 @@ butonShowWeather.addEventListener("click", () => {
   butonShowWeather.style.display = "none";
   let tabla = document.createElement("table");
 
-  // Crear la primera fila (encabezados)
   let thTitle = document.createElement("th");
   thTitle.setAttribute("colspan", "14");
   thTitle.textContent = "Parametros climaticos de Mar del Plata,BA(1961-1990)";
   tabla.appendChild(thTitle);
   let filaEncabezados = document.createElement("tr");
 
-  // Crear los encabezados
   let encabezados = [
     "Parametros",
     "Ene",
@@ -72,20 +70,15 @@ butonShowWeather.addEventListener("click", () => {
     filaEncabezados.appendChild(th);
   });
 
-  // Agregar la fila de encabezados a la tabla
   tabla.appendChild(filaEncabezados);
-
-  // Crear las filas de datos utilizando los valores del objeto
 
   for (let key in arrayOfClimaticParametersMDQ) {
     let filaDatos = document.createElement("tr");
 
-    // Crear la celda del nombre de los datos
     let thNombreDato = document.createElement("th");
     thNombreDato.textContent = key;
     filaDatos.appendChild(thNombreDato);
 
-    // Crear las celdas de los valores
     for (let j = 0; j < arrayOfClimaticParametersMDQ[key].length; j++) {
       let tdValor = document.createElement("td");
       tdValor.className = key;
@@ -94,11 +87,9 @@ butonShowWeather.addEventListener("click", () => {
       filaDatos.appendChild(tdValor);
     }
 
-    // Agregar la fila de datos a la tabla
     tabla.appendChild(filaDatos);
   }
 
-  // Agregar la tabla al documento HTML
   let contenedorTabla = document.querySelector(".contenedorTabla");
   contenedorTabla.appendChild(tabla);
 });
