@@ -1,7 +1,5 @@
 const http = require("http");
 const { handleRequest } = require("./controllers/HandlerRequest");
-/* const url = require("url");
-const { Model } = require("./model/model.js"); */
 
 const server = http.createServer((req, res) => {
   handleRequest(req, res);
