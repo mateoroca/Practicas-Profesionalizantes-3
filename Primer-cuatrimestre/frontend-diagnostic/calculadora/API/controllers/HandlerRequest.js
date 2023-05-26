@@ -12,7 +12,11 @@ function handleRequest(req, res) {
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.end();
   } else if (path === "/evaluate") {
-    const expression = query.expression;
+    let expression = query.expression.trim();
+    expression = expression.replace(/^0+(?=\d)/, "");
+
+    if (expression == "" || expression == null) {
+    }
 
     let model = new Model();
     let result = model.evaluateExpression(expression.toString());
