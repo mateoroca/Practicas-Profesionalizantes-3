@@ -108,9 +108,23 @@ class Controller {
   }
 
   onButtonEqualClick() {
-    this.innerView.display.value = this.innerModel.evaluateExpression(
-      this.innerView.display.value
-    );
+    if (this.innerView.display.value !== "") {
+      const expression = this.innerView.display.value;
+      const url = `http://localhost:3000/evaluate?expression=${encodeURIComponent(
+        expression
+      )}`;
+
+      axios
+        .post(url)
+        .then((response) => {
+          const result = response.data;
+          this.innerView.display.value = result;
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
   }
 }
 
