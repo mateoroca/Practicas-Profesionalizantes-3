@@ -108,8 +108,10 @@ class Controller {
   }
 
   onButtonEqualClick() {
-    if (this.innerView.display.value !== "") {
-      const expression = this.innerView.display.value;
+    let expression = this.innerView.display.value.trim();
+    expression = expression.replace(/^0+(?=\d)/, "");
+
+    if (expression != null && expression !== "") {
       const url = `http://localhost:3000/evaluate?expression=${encodeURIComponent(
         expression
       )}`;
@@ -124,6 +126,8 @@ class Controller {
         .catch((error) => {
           console.error("Error:", error);
         });
+    } else {
+      alert("error you can't evaluate empty data");
     }
   }
 }
