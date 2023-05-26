@@ -104,7 +104,7 @@ class Controller {
     this.innerView.display.value += "/";
   }
   onButtonDeleteClick() {
-    this.innerView.display.value = " ";
+    this.innerView.display.value = this.innerView.display.value.slice(0, -1);
   }
 
   onButtonEqualClick() {
