@@ -1,17 +1,10 @@
-import Controller from "./src/controller/controller.js";
-import View from "./src/view/view.js";
+import { Model } from "./src/model/modelDefault.js";
+import { CalculatorComponent } from "./src/Calculator.js";
 
-class calculator {
-  constructor() {
-    this.view = new View();
-    this.controller = new Controller(this.view, this.model);
-  }
+function main() {
+  let calculator = new CalculatorComponent(Model);
+
+  document.body.appendChild(calculator);
 }
 
-function startApplication() {
-  let myCalculator = new calculator();
-
-  document.body.appendChild(myCalculator.view.calculatorDiv);
-}
-
-window.addEventListener("load", startApplication);
+window.addEventListener("load", main);

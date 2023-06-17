@@ -2,7 +2,8 @@ class Controller {
   constructor(viewReference, modelReferens) {
     this.innerView = viewReference;
     this.innerModel = modelReferens;
-
+  }
+  enable() {
     this.innerView.btn0.addEventListener("click", () => {
       this.onButton0Click();
     });
@@ -58,6 +59,26 @@ class Controller {
       this.onButtonEqualClick();
     });
   }
+
+  disable() {
+    this.innerView.btn0 = null;
+    this.innerView.btn1 = null;
+    this.innerView.btn2 = null;
+    this.innerView.btn3 = null;
+    this.innerView.btn4 = null;
+    this.innerView.btn5 = null;
+    this.innerView.btn6 = null;
+    this.innerView.btn7 = null;
+    this.innerView.btn8 = null;
+    this.innerView.btn9 = null;
+    this.innerView.btnPoint = null;
+    this.innerView.btnPlus = null;
+    this.innerView.btnMultiplication = null;
+    this.innerView.btnSubtraction = null;
+    this.innerView.btnDivide = null;
+    this.innerView.btnDelete = null;
+    this.innerView.btnEqual = null;
+  }
   onButton0Click() {
     this.innerView.display.value += "0";
   }
@@ -108,28 +129,11 @@ class Controller {
   }
 
   onButtonEqualClick() {
-    let expression = this.innerView.display.value.trim();
-    expression = expression.replace(/^0+(?=\d)/, "");
-
-    if (expression != null && expression !== "") {
-      const url = `http://localhost:3000/evaluate?expression=${encodeURIComponent(
-        expression
-      )}`;
-
-      axios
-        .post(url)
-        .then((response) => {
-          const result = response.data;
-          this.innerView.display.value = result;
-          console.log(response);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    } else {
-      alert("error you can't evaluate empty data");
-    }
+    this.innerModel
+      .calculateExpression(this.innerView.display.value)
+      .then((res) => {
+        this.innerView.display.value = res;
+      });
   }
 }
-
-export default Controller;
+export { Controller };

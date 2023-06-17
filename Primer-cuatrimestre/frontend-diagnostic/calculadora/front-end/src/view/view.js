@@ -1,11 +1,10 @@
-class View {
+class View extends HTMLElement {
   constructor() {
-    this.calculatorDiv = document.createElement("div");
-    this.calculatorDiv.classList.add("calculator");
+    super();
 
     this.outputDiv = document.createElement("div");
-    this.outputDiv.classList.add("ouput");
-    this.calculatorDiv.appendChild(this.outputDiv);
+    this.outputDiv.classList.add("output");
+    this.appendChild(this.outputDiv);
 
     this.display = document.createElement("input");
     this.display.classList.add("display");
@@ -16,7 +15,7 @@ class View {
 
     this.keys = document.createElement("div");
     this.keys.classList.add("keys");
-    this.calculatorDiv.appendChild(this.keys);
+    this.appendChild(this.keys);
 
     this.btn7 = document.createElement("button");
     this.btn7.classList.add("number-blue");
@@ -117,8 +116,10 @@ class View {
     this.btnDelete = document.createElement("button");
     this.btnDelete.classList.add("delete");
     this.btnDelete.innerText = "borrar";
-    this.calculatorDiv.appendChild(this.btnDelete);
+    this.appendChild(this.btnDelete);
   }
 }
 
-export default View;
+customElements.define("x-calculator-view", View);
+
+export { View };
