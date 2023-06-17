@@ -1,9 +1,9 @@
 import { Controller } from "./controller/controller.js";
 import { View } from "./view/view.js";
-import { Model } from "./model/modelDefault.js";
+import { calculatorDefaultModel } from "./model/defaulModel.js";
 
 class CalculatorComponent extends HTMLElement {
-  constructor(modelConstructor = Model) {
+  constructor(modelConstructor = calculatorDefaultModel) {
     super();
     this.attachShadow({ mode: "open" });
 

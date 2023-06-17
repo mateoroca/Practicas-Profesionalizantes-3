@@ -1,4 +1,4 @@
-import { Model } from "./src/model/modelDefault.js";
+import { Model } from "./src/model/model.js";
 import { CalculatorComponent } from "./src/Calculator.js";
 
 function main() {
