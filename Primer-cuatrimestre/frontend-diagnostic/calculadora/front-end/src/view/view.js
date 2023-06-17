@@ -2,20 +2,19 @@ class View extends HTMLElement {
   constructor() {
     super();
 
-    this.outputDiv = document.createElement("div");
-    this.outputDiv.classList.add("output");
-    this.appendChild(this.outputDiv);
+    this.calculatorDiv = document.createElement("div");
+    this.calculatorDiv.classList.add("calculator");
 
     this.display = document.createElement("input");
     this.display.classList.add("display");
     this.display.setAttribute("placeholder", "0");
     this.display.disabled = true;
     this.display.type = "text";
-    this.outputDiv.appendChild(this.display);
+    this.calculatorDiv.appendChild(this.display);
 
     this.keys = document.createElement("div");
     this.keys.classList.add("keys");
-    this.appendChild(this.keys);
+    this.calculatorDiv.appendChild(this.keys);
 
     this.btn7 = document.createElement("button");
     this.btn7.classList.add("number-blue");
@@ -116,7 +115,8 @@ class View extends HTMLElement {
     this.btnDelete = document.createElement("button");
     this.btnDelete.classList.add("delete");
     this.btnDelete.innerText = "borrar";
-    this.appendChild(this.btnDelete);
+    this.calculatorDiv.appendChild(this.btnDelete);
+    this.appendChild(this.calculatorDiv);
   }
 }
 
