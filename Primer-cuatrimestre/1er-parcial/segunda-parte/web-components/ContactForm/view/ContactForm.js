@@ -48,7 +48,7 @@ class AddContactView extends HTMLElement {
 
     this.btnAdd = document.createElement("button");
     this.btnAdd.innerText = "Add";
-    this.btnAdd.classList.add("btn");
+    this.btnAdd.classList.add("BTN");
 
     let style = document.createElement("style");
     style.innerText = `@import './web-components/ContactForm/style/style.css'`;

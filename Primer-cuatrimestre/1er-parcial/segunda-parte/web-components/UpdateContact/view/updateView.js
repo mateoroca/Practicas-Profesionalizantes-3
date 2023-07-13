@@ -1,7 +1,6 @@
-class ContactsView extends HTMLElement {
+class UpdateContactView extends HTMLElement {
   constructor() {
     super();
-    this.btnClicked;
 
     this.container = document.createElement("div");
     this.container.classList.add("form");
@@ -34,6 +33,6 @@ class ContactsView extends HTMLElement {
   }
 }
 
-customElements.define("x-contactview", ContactsView);
+customElements.define("x-updatecontactview", UpdateContactView);
 
-export { ContactsView };
+export { UpdateContactView };

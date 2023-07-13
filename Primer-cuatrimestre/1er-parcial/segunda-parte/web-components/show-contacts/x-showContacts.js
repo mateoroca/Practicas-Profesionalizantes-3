@@ -1,7 +1,7 @@
 import { ContactsView } from "./view/showContactsView.js";
 
 class ShowContantacts extends HTMLElement {
-  constructor(innerModel = Model, innerController = controller) {
+  constructor(innerModel = Model, innerController) {
     super();
     this.view = new ContactsView();
     this.model = new innerModel();
